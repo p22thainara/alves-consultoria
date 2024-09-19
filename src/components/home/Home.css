@@ -1,0 +1,48 @@
+/* Centralização da tela inicial */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #284504 0%, #acd698 100%);
+    text-align: center;
+  }
+  
+  /* Animação de boas-vindas */
+  h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    animation: blink 1.5s step-start infinite;
+  }
+  
+  /* Estilo do botão de entrar no sistema */
+  .enter-button {
+    padding: 12px 24px;
+    background-color: #085b1e;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .enter-button:hover {
+    background-color: #194e87;
+  }
+  
+  /* Animação de piscar no "Iniciando..." */
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
