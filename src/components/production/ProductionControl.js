@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductionControl.css';
 
 const ProductionControl = () => {
   const [activity, setActivity] = useState('');
-  const [date, setDate] = useState(''); // Estado para a data
-  const [activities, setActivities] = useState([]); // Estado para armazenar as atividades
+  const [date, setDate] = useState('');
+  const [activities, setActivities] = useState([]);
   const navigate = useNavigate();
 
+  // Carrega as atividades do Local Storage quando o componente monta
+  useEffect(() => {
+    const storedActivities = localStorage.getItem('activities');
+    if (storedActivities) {
+      setActivities(JSON.parse(storedActivities));
+    }
+  }, []);
+
+  // Função para adicionar nova atividade e salvar no Local Storage
   const handleAddActivity = () => {
     if (activity && date) {
-      // Adicionar nova atividade com a data à lista de atividades
       const newActivity = { id: Date.now(), type: activity, date: date };
-      setActivities([...activities, newActivity]);
-      setActivity(''); // Limpar o campo de seleção
-      setDate(''); // Limpar o campo de data
+      const updatedActivities = [...activities, newActivity];
+      setActivities(updatedActivities);
+      localStorage.setItem('activities', JSON.stringify(updatedActivities)); // Salva no Local Storage
+      setActivity('');
+      setDate('');
     } else {
       alert('Por favor, selecione uma atividade e uma data!');
     }
@@ -40,21 +50,20 @@ const ProductionControl = () => {
             type="date"
             id="date"
             value={date}
-            onChange={(e) => setDate(e.target.value)} // Capturar a data escolhida
+            onChange={(e) => setDate(e.target.value)}
           />
         </div>
 
         <button onClick={handleAddActivity}>Adicionar Atividade</button>
 
-        {/* Exibir as atividades registradas */}
         <h3>Atividades Registradas</h3>
-        <ul>
+        <ul className="activities-list">
           {activities.length === 0 ? (
             <li>Nenhuma atividade registrada ainda</li>
           ) : (
             activities.map((item) => (
               <li key={item.id}>
-                {item.type} - {item.date} {/* Exibe o tipo de atividade e a data */}
+                {item.type} - {item.date}
               </li>
             ))
           )}

@@ -1,107 +1,74 @@
-/* Estilo geral da página */
 .page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-  }
-  
-  /* Contêiner principal */
-  .production-container {
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-  }
-  
-  /* Estilo para o contêiner da atividade */
-  .activity-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    gap: 15px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-  
-  label {
-    font-size: 18px;
-    color: #333333;
-  }
-  
-  select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 16px;
-    color: #333333;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-  }
-  
-  select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-    outline: none;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 250px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  h2 {
-    font-size: 24px;
-    color: #333333;
-    margin-bottom: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
 
-  .date-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 400px;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  input[type="date"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 16px;
-    color: #333333;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-  }
-  
-  input[type="date"]:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-    outline: none;
-  }
+.production-container {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.activity-container, .date-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+}
+
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Adicionando o scroll para atividades registradas */
+.activities-list {
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

@@ -1,48 +1,63 @@
 /* Centralização da tela inicial */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #284504 0%, #acd698 100%);
-    text-align: center;
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  z-index: 1;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(40, 69, 4, 0.7) 0%, rgba(172, 214, 152, 0.7) 100%),
+              url('../../assets/img/background.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Apenas a imagem de fundo fica mais clara */
+  z-index: -1; /* A camada de fundo ficará atrás do conteúdo */
+}
+
+/* Animação de boas-vindas */
+h1 {
+  font-size: 3rem;
+  color: #3f8646;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #7bad75;
+  margin-bottom: 40px;
   
-  /* Animação de boas-vindas */
-  h1 {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 20px;
+}
+
+/* Estilo do botão de entrar no sistema */
+.enter-button {
+  padding: 12px 24px;
+  background-color: #085b1e;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enter-button:hover {
+  background-color: #194e87;
+}
+
+/* Animação de piscar no "Iniciando..." */
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
-  
-  h2 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 40px;
-    animation: blink 1.5s step-start infinite;
-  }
-  
-  /* Estilo do botão de entrar no sistema */
-  .enter-button {
-    padding: 12px 24px;
-    background-color: #085b1e;
-    color: #ffffff;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .enter-button:hover {
-    background-color: #194e87;
-  }
-  
-  /* Animação de piscar no "Iniciando..." */
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  
+}

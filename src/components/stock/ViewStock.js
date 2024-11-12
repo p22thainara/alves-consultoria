@@ -3,15 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useStock } from '../contexts/StockContext';
 
 const ViewStock = () => {
-  const { stock } = useStock(); // Pegar os itens do estoque
+  const { stock } = useStock();
   const navigate = useNavigate();
 
-  const handleBackToStock = () => {
-    navigate('/stock'); // Navega para adicionar mais itens
-  };
-
   const handleBackToDashboard = () => {
-    navigate('/'); // Navega de volta para o dashboard
+    navigate('/dashboard'); // Navega de volta para o Dashboard
   };
 
   return (
@@ -29,9 +25,6 @@ const ViewStock = () => {
             ))
           )}
         </ul>
-        <button onClick={handleBackToStock} style={{ marginTop: '10px' }}>
-          Adicionar Mais Itens
-        </button>
         <button onClick={handleBackToDashboard} style={{ marginTop: '10px' }}>
           Voltar ao Dashboard
         </button>

@@ -1,103 +1,199 @@
 /* Estilo específico para a página de login */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-  }
-  
-  .login-container form {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  /* Estilo específico para a página de registro */
-  .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-  }
-  
-  .register-container form {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  /* Estilos gerais, caso necessário */
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    color: #333;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-  }
-  
-  .input-group input:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-  }
-  
-  /* Estilos para os botões de login e registro */
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  button {
-    width: 48%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Botão de login */
-  .login-container button[type="submit"] {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  .login-container button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Botão de registro */
-  .register-container button[type="submit"] {
-    background-color: #28a745;
-    color: #ffffff;
-  }
-  
-  .register-container button[type="submit"]:hover {
-    background-color: #218838;
-  }
-  
+  display: flex;
+  flex-direction: column; /* Alinhar os elementos verticalmente */
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Certificar que o título 'Login' não tenha animação */
+.login-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+
+}
+
+/* Estilos gerais para o formulário */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para os botões de login e registro */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Botão de login */
+.login-button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Botão de registro */
+.register-button {
+  background-color: #28a745;
+  color: #ffffff;
+}
+/* Estilo específico para a página de login */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column; /* Alinhar os elementos verticalmente */
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px; /* Cantos levemente arredondados */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Certificar que o título 'Login' não tenha animação */
+.login-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* Centralizar o título */
+}
+
+/* Estilos gerais para o formulário */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px; /* Bordas mais suaves */
+  border: 1px solid #ccc;
+  font-size: 18px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para os botões de login e registro */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Melhor espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 14px; /* Botões maiores */
+  border: none;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  font-size: 18px;
+  font-weight: bold; /* Texto mais forte */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Adição de transição de transformação */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave nos botões */
+}
+
+button:hover {
+  transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Botão de login */
+.login-button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Botão de registro */
+.register-button {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}

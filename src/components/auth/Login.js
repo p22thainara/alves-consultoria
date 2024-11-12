@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // Adicione um CSS específico para login
+import './Login.css';
 import api from '../../services/api';
 
 const Login = () => {
@@ -11,8 +11,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Simulando a navegação para produção ao clicar em login (sem integração com back-end por enquanto)
-    navigate('/production');
+    navigate('/dashboard');
   };
 
   const handleRegisterRedirect = () => {
@@ -22,7 +21,7 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Login</h2>
+        <h2 className="login-title">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="input-group">
             <label>Email</label>
@@ -45,7 +44,9 @@ const Login = () => {
           {error && <p className="error-message">{error}</p>}
           <div className="button-group">
             <button type="submit" className="login-button">Entrar</button>
-            <button type="button" onClick={handleRegisterRedirect} className="register-button">Criar Conta</button>
+            <button type="button" onClick={handleRegisterRedirect} className="register-button">
+              Criar Conta
+            </button>
           </div>
         </form>
       </div>

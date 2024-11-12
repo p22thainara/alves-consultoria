@@ -9,8 +9,20 @@ export const useStock = () => {
 export const StockProvider = ({ children }) => {
   const [stock, setStock] = useState([]);
 
-  const addStock = (item) => {
-    setStock((prevStock) => [...prevStock, item]);
+  const addStock = (newItem) => {
+    setStock((prevStock) => {
+      const existingItem = prevStock.find((item) => item.name === newItem.name);
+
+      if (existingItem) {
+        
+        return prevStock.map((item) =>
+          item.name === newItem.name ? { ...item, quantity: newItem.quantity } : item
+        );
+      }
+
+      
+      return [...prevStock, newItem];
+    });
   };
 
   const value = {
